@@ -1,0 +1,202 @@
+$woodenhorse-edge-length: 480px;
+$woodenhorse-grid-length: 120px;
+
+#woodenhorse
+{
+  position: relative;
+  margin: 0 auto;
+  min-height: 500px;
+  width: $woodenhorse-edge-length * 2;
+  perspective: $woodenhorse-edge-length * 4;
+  perspective-origin: 50% 50%;
+  -webkit-font-smoothing: none;
+}
+#woodenhorse section
+{
+  position: absolute;
+  top: -24px;
+  display: none;
+}
+#woodenhorse .steed
+{
+  overflow: hidden;
+  width: $woodenhorse-edge-length;
+  height: $woodenhorse-edge-length;
+  border-radius: 16px;
+  background-color: black;
+  
+  &.steed-2nd, &.steed-3rd, &.steed-4th, &.steed-5th
+  {
+    display: block;
+  }
+  &.steed-2nd
+  {
+    left: 55%;
+    transform: translateZ(-$woodenhorse-edge-length);
+    animation: tail-to-right 600ms linear forwards;
+  }
+  &.steed-3rd
+  {
+    left: 40%;
+    box-shadow: 0px 0px 2px rgba(255,255,255,0.5);
+    transform: rotateY(-60deg) translateZ(-$woodenhorse-edge-length/2);
+    animation: right-to-head 600ms ease-in-out forwards;
+    -webkit-font-smoothing: antialiased;
+  }
+  &.steed-4th
+  {
+    left: 25%;
+    transform: translateZ(0px);
+    animation: head-to-left 600ms ease-in-out forwards;
+  }
+  &.steed-5th
+  {
+    left: 10%;
+    transform: rotateY(60deg) translateZ(-$woodenhorse-edge-length/2);
+    animation: left-to-tail 600ms linear forwards;
+  }
+}
+
+@keyframes tail-to-right
+{
+  from {left: 55%; transform: translateZ(-$woodenhorse-edge-length);}
+  to   {left: 40%; transform: rotateY(-60deg) translateZ(-240px);}
+}
+@keyframes right-to-head
+{
+  from {left: 40%; transform: rotateY(-60deg) translateZ(-240px);}
+  to   {left: 25%; transform: translateZ(0px);}
+}
+@keyframes head-to-left
+{
+  from {left: 25%; transform: translateZ(0px);}
+  to   {left: 10%; transform: rotateY(60deg) translateZ(-240px);}
+}
+@keyframes left-to-tail
+{
+  from {left: 10%; transform: rotateY(60deg) translateZ(-240px);}
+  to   {left: -5%; transform: translateZ(-$woodenhorse-edge-length);}
+}
+
+#woodenhorse .item-info
+{
+  margin: 0 16px;
+  text-align: right;
+}
+#woodenhorse .item-title
+{
+  margin-top: 8px;
+  margin-left: 8px;
+  text-align: center;
+  white-space: nowrap;
+  font-weight: bold;
+}
+#woodenhorse .post
+{
+  padding: 8px 0;
+  color: white;
+}
+#woodenhorse .network
+{
+  overflow: hidden;
+  white-space: nowrap;
+  
+  ol, ul
+  {
+    height: $woodenhorse-grid-length;
+    list-style: none;
+    white-space: nowrap;
+  }
+}
+#woodenhorse .beacon
+{
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  width: $woodenhorse-grid-length;
+  height: $woodenhorse-grid-length;
+  background-color: #F2F2F2;
+  zoom: 1;
+  
+  &.intermission
+  {
+    color: #888888;
+  }
+  &.last .tile
+  {
+    right: 0;
+  }
+  h2
+  {
+    padding: 5px;
+    white-space: normal;
+    word-wrap: break-word;
+    font-weight: bold;
+    
+    &.die-face1,
+    &.die-face2,
+    &.die-face3,
+    &.die-face4,
+    &.die-face6,
+    &.die-face8,
+    &.die-face9
+    {
+      position: absolute;
+      padding: 0;
+      line-height: 100%;
+    }
+    &.die-face1
+    {
+      bottom: 12px;
+      left: 12px;
+      font-size: 600%;
+    }
+    &.die-face2
+    {
+      bottom: 36px;
+      left: 12px;
+      font-size: 300%;
+    }
+    &.die-face3
+    {
+      bottom: 45px;
+      left: 12px;
+      font-size: 200%;
+    }
+    &.die-face4
+    {
+      bottom: 12px;
+      left: 12px;
+      font-size: 300%;
+    }
+    &.die-face6
+    {
+      bottom: 28px;
+      left: 12px;
+      font-size: 200%;
+    }
+    &.die-face8
+    {
+      bottom: 36px;
+      left: 12px;
+      font-size: 150%;
+    }
+    &.die-face9
+    {
+      top: 12px;
+      left: 12px;
+      font-size: 150%;
+    }
+  }
+  .tile
+  {
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    overflow: hidden;
+    background-color: #000;
+  }
+}

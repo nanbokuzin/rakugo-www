@@ -1,0 +1,51 @@
+$main-bg-colour: rgb(242, 239, 240);
+$main-colour: rgb(165, 114, 42);
+$main-text-colour: rgb(63, 44, 16);
+$main-link-colour: #00b7ff;
+$main-font: "Hiragino Mincho Pro", "ヒラギノ明朝 ProW", "ＭＳ 明朝", serif;
+$numeral-font: "Helvetica Neue", sans-serif;
+
+body
+{
+  margin: 0;
+  min-width: 1024px;
+  min-height: 100%;
+  width: 100%;
+  background: $main-bg-colour;
+  color: $main-text-colour;
+  font-family: $main-font;
+  
+  font-smoothing: antialiased;
+}
+header
+{
+  
+  > div
+  {
+    padding-bottom: 72px;
+    text-align: center;
+  }
+  h2
+  {
+    font-weight: bold;
+    font-size: 300%;
+  }
+  a
+  {
+    display: inline-block;
+    color: $main-text-colour;
+  }
+}
+#woodenhorse .item-info .pricetag
+{
+  display: none;
+
+  &:first-of-type
+  {
+    display: inline;
+  }
+  .amount
+  {
+    font-family: $numeral-font;
+  }
+}

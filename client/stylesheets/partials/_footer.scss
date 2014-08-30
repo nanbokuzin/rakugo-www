@@ -1,0 +1,21 @@
+$footer-colour: rgb(63, 44, 16);
+$footer-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+footer
+{
+  clear: both;
+  margin-top: 50px;
+  padding: 80px 0;
+  font-family: $footer-font;
+  
+  > div
+  {
+    color: $footer-colour;
+    text-align: center;
+  }
+}
+.copyright
+{
+  display: block;
+  margin-bottom: 50px;
+}

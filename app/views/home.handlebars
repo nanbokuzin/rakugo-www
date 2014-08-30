@@ -1,0 +1,28 @@
+<div id="main">
+  <header>
+    <div>
+      <h2>きょうの寄席</h2>
+      {{#each nav}}
+      <a>{{.}}</a>
+      {{/each}}
+    </div>
+  </header>
+  <div id="woodenhorse">
+    {{#each programme}}
+    <section data-uri="{{uri venue time}}">
+      <h1 class="item-title snow">{{title}}</h1>
+      <div class="post">
+        <p class="item-info">
+        <i class="icon-banknotes"></i>
+        {{#each tickets}}
+        <span class="pricetag">{{tag}}：<strong>{{priceInYen}}円</strong></span>
+        {{/each}}
+        | <i class="icon-crapper"></i>{{venue}}
+        </p>
+        <div class="network"></div>
+        <div class="item-footer"></div>
+      </div>
+    </section>
+    {{/each}}
+  </div>
+</div>

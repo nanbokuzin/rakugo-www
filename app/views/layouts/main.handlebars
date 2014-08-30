@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <title>{{title}}</title>
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <script src="/javascripts/jquery.min.js"></script>
+  <script src="/javascripts/application.js"></script>
+  <script>
+  $(function() {
+    $('#woodenhorse').woodenhorse();
+  });
+  </script>
+</head>
+<body>
+{{{body}}}
+<footer>
+  <div>
+    <small class="copyright">Otosibanasi of the Day &#169; All rights reserved.</small>
+  </div>
+</footer>
+{{#if testing}}
+<div id="mocha"></div>
+<link rel="stylesheet" href="/vendor/mocha.css" />
+<script src="/vendor/mocha.js"></script>
+<script src="/vendor/chai.js"></script>
+<script>
+mocha.ui('tdd');
+var assert = chai.assert;
+</script>
+<script src="/test/tests-global.js"></script>
+<script>mocha.run();</script>
+{{/if}}
+</body>
+</html>
