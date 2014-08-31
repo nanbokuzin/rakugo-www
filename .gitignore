@@ -3,6 +3,5 @@ bower_components
 *.log
 *.pid
 .sass-cache
-build
 tmp
 vendor

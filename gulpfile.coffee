@@ -2,6 +2,7 @@ gulp   = require 'gulp'
 prefix = require 'gulp-autoprefixer'
 concat = require 'gulp-concat'
 sass   = require 'gulp-ruby-sass'
+del = require 'del';
 
 path =
   javascripts: [
@@ -28,15 +29,10 @@ gulp.task 'styles', ->
     .pipe concat 'style.css'
     .pipe gulp.dest './app/build/stylesheets'
 
-gulp.task 'watch', ->
-  opts = debounceDelay: 4000
-  gulp.watch path.javascripts, opts, ['scripts']
-  gulp.watch path.stylesheets, opts, ['styles']
-
 gulp.task 'bower', ->
   gulp.src([
-    './bower_components/jquery/dist/jquery.min.js'
-    './bower_components/bootstrap/dist/js/bootstrap.min.js'
+    './bower_components/bootstrap/dist/js/bootstrap.min.js',
+    './bower_components/jquery/dist/*'
   ]).pipe gulp.dest './app/build/javascripts'
 
   gulp.src([
@@ -48,5 +44,16 @@ gulp.task 'bower', ->
     './bower_components/bootstrap/dist/fonts/*'
   ]).pipe gulp.dest './app/build/fonts'
 
-# The default task (called when you run `gulp` from cli)
+gulp.task 'watch', ->
+  opts = debounceDelay: 4000
+  gulp.watch path.javascripts, opts, ['scripts']
+  gulp.watch path.stylesheets, opts, ['styles']
+
+gulp.task 'clean', (cb) ->
+  del ['app/build', '*.log'], cb
+
+# Build the application
+gulp.task 'build', ['bower', 'scripts', 'styles']
+
+# the Default task (called when you run `gulp` from cli)
 gulp.task 'default', []
