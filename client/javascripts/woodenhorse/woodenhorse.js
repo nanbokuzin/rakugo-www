@@ -141,14 +141,16 @@
     });
     
     var parentNode = document.createElement('DIV');
-    var childNodes = document.createElement('UL');
-    for (var i = 0; i < list.length; ++i) {
-      childNodes.appendChild(list[i]);
-      if (!(i === 0 || (i + 1) % 4)) {
-        list[i].className = 'last beacon';
-        parentNode.appendChild(childNodes);
-        childNodes = document.createElement('UL');
-      }
+    while (list.length) {
+      var childNodes = document.createElement('UL');
+      var tmpList = list.splice(0, 4);
+      tmpList.forEach(function(elem, i) {
+        childNodes.appendChild(elem);
+        if (i === 3) {
+          elem.className = 'last beacon';
+        }
+      });
+      parentNode.appendChild(childNodes);
     }
     return parentNode.childNodes;
   }
