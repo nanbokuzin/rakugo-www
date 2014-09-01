@@ -1,0 +1,89 @@
+{
+  "venue": "池袋演芸場",
+  "title": "九月上席 昼の部",
+  "name": "",
+  "tickets": [
+    {
+      "tag": "一般",
+      "priceInYen": 2500
+    }
+  ],
+  "time": "2014-09-01T12:30:00+09:00",
+  "programme": [
+    {
+      "profession": "落語",
+      "performers": [
+        "春雨や 雷太"
+      ]
+    },
+    {
+      "profession": "太神楽",
+      "performers": [
+        "春本 小助"
+      ]
+    },
+    {
+      "profession": "落語",
+      "performers": [
+        "春風亭 柳之助"
+      ]
+    },
+    {
+      "profession": "落語",
+      "performers": [
+        "春風亭 柳橋"
+      ]
+    },
+    {
+      "profession": "ギタレレ漫才",
+      "performers": [
+        "ぴろき"
+      ]
+    },
+    {
+      "profession": "落語",
+      "performers": [
+        "三遊亭 圓遊"
+      ]
+    },
+    {
+      "profession": "落語",
+      "performers": [
+        "三笑亭 笑三"
+      ]
+    },
+    {
+      "performers": []
+    },
+    {
+      "profession": "漫才",
+      "performers": [
+        "新山 ひでや・やすこ"
+      ]
+    },
+    {
+      "profession": "落語",
+      "performers": [
+        "雷門 小助六"
+      ]
+    },
+    {
+      "profession": "落語",
+      "performers": [
+        "古今亭 寿助"
+      ]
+    },
+    {
+      "profession": "奇術",
+      "performers": [
+        "マジックジェミー"
+      ]
+    },
+    {
+      "profession": "落語",
+      "performers": [
+        "雷門 助六"
+      ]
+    }
+  ]
+}
