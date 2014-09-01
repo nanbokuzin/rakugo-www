@@ -45,7 +45,7 @@
       }
       count = 0;
       window.requestAnimationFrame(loop);
-      steed = makeSteed(steed, steed.head.next.next.element);
+      steed = makeSteed(inset, steed.head.next.next.element);
       drawQuad(target, steed)
     }
   };
